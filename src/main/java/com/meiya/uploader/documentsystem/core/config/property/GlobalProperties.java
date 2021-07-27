@@ -17,9 +17,6 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "global")
 public class GlobalProperties {
 
-    private String secret;
+    private String remark;
 
-    private int expire;
-
-    private Boolean mock;
 }

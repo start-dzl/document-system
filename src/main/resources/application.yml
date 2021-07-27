@@ -2,20 +2,12 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/MyUploader?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
     username: root
-    password: 1234
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  servlet:
-    multipart:
-      max-file-size: 10000MB
-      max-request-size: 100000MB
-global:
-  secret: 81yf8ICpwg2jRZt#
-  expire: 640000000
-  admin:
-    username: admin
     password: 123456
+
+global:
+  remark: 本地变量
+
 logging:
   file:
     name: log/dev.log
-upload:
-  path: E:\\video\\
+

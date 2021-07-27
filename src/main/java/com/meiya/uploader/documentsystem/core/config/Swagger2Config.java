@@ -1,7 +1,5 @@
 package com.meiya.uploader.documentsystem.core.config;
 
-import com.meiya.uploader.documentsystem.security.CurrentUser;
-import com.meiya.uploader.documentsystem.security.UserOrThrow;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -21,7 +19,6 @@ import java.util.List;
 
 @Configuration
 @EnableSwagger2
-@Profile({"!pro"})
 public class Swagger2Config {
     @Bean
     public Docket createRestApi() {
@@ -35,8 +32,6 @@ public class Swagger2Config {
         pars.add(tokenPar.build());
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
-                .ignoredParameterTypes(CurrentUser.class)
-                .ignoredParameterTypes(UserOrThrow.class)
                 .select()
                 .apis(RequestHandlerSelectors
                         .basePackage("com.meiya"))
